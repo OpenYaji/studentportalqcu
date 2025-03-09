@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCU Portal </title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/profile1.png">
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo"><span> QCU </span>P<img src="images/profile1.png" alt="">RTAL</a>
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <a href="#loginform">Student Portal</a>
+        </nav>
+    </header>
+    <div id="login-form-overlay">
+        <div class="image-container">
+          </div>
+        <div id="login-form">
+          <span class="close-button" onclick="closeLoginForm()">&times;</span>
+          <h2>Student Login</h2>
+          <img src="images/about.png" alt="" class="">
+          <form id="loginForm">  <label for="username">Student ID</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password </label>
+            <input type="password" id="password" name="password" required>
+            <button type="button" onclick="validateLogin()">Login</button>  </form>
+        </div>
+      </div>
+      
+      <div id="loading-screen" style="display: none;">
+        <div class="loader"></div>
+      </div>
+      <div id="success-notification">
+        Login Successful!!!
+      </div>    
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Quezon City University</h3>
+            <h1>#1 Local University</h1>
+            <h3>COLLEGE OF <span class="multiple-text"></span></h3>
+            <p> QCU VISION</p>
+            <p>To be recognized as the #1 local university of
+                employable graduates.</p><br>
+            <p> QCU MISSION</p>
+            <p>To provide a comprehensive education that enhances 
+                the lives of QCU students for nation-building and 
+                as world citizens.
+            </p>
+                 <div class="social-media">
+                    <a href="https://www.facebook.com/calipes.johnrey" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
+                    <a href="https://www.instagram.com/jayeeboy" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+                    <a href="https://github.com/OpenYaji"target="_blank"><i class='bx bxl-github'></i></a>
+                 </div>
+        </div>
+
+        <div class="home-img">
+            <img src="images/profile.png" alt="">
+        </div>
+
+    </section>
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/about.png" alt="">
+        </div>
+    
+        <div class="about-content">
+            <h2 class="heading">About <span>QCU!</span></h2>
+            <h3>Student Portal</h3>
+            <p>The QCU Student Portal provides students with convenient access to essential academic information and tools, 
+                including Grade Viewing (easily view your grades for current and past semesters/school years), 
+                Automatic GWA Computation (your General Weighted Average (GWA) is automatically calculated and displayed),
+                Class Schedule (access your current class schedule, including times, rooms, and instructors), 
+                Past Grades (view your grades from previous semesters or school years), 
+                Subject Information (see a list of subjects you have taken and those you have yet to take),
+                and Program Curriculum (view the curriculum for your specific program of study).</p>
+            <p>We are continuously working to improve the portal and add new features to enhance your academic experience.</p>
+        </div>
+    </section>
+    <section class="services" id="services">
+        <h2 class="heading">Our <span> Services</span></h2>
+        <div class="services-container">
+            <div class="services-box">
+                <i class='bx bx-book-open'></i>
+                <h3> Academic Services</h3>
+                <p>We provide a range of academic support services to help students succeed, 
+                    including tutoring and academic advising, library resources and research assistance, 
+                    learning resources and workshops, student support services (counseling, disability services), 
+                    and testing and assessment services.</p>
+                <a href="" class="btn">Read More</a>
+            </div>
+            <div class="services-box">
+                <i class='bx bx-briefcase'></i>
+                <h3> Student Affairs </h3>
+                <p>Our Student Affairs office handles various aspects of student life, 
+                    such as student organizations and activities, scholarships and financial aid, 
+                    student conduct and discipline, housing and accommodation assistance, and career services 
+                    and placement assistance.</p>
+                <a href="" class="btn">Read More</a>
+            </div>
+            <div class="services-box">
+                <i class='bx bx-building'></i>
+                <h3>Administrative Services</h3>
+                <p>We offer efficient administrative services to support students and faculty, 
+                    including enrollment and registration, transcripts and certificates, student ID cards,
+                    tuition and fees payment, and facilities and maintenance.</p>
+
+                <a href="" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Project</span></h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="images/p1.png"alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>  I'm eager to learn and explore the latest technologies 
+                        in networking and databases.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/p1.png"alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>  I'm eager to learn and explore the latest technologies 
+                        in networking and databases.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/p1.png"alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>  I'm eager to learn and explore the latest technologies 
+                        in networking and databases.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/p1.png"alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>  I'm eager to learn and explore the latest technologies 
+                        in networking and databases.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/p1.png"alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>  I'm eager to learn and explore the latest technologies 
+                        in networking and databases.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/p1.png"alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>  I'm eager to learn and explore the latest technologies 
+                        in networking and databases.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Us!</span></h2>
+        <form action="https://formspree.io/f/xdkaddgr" method="POST" id="contactForm">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name" name="fullName" required>
+                <input type="email" placeholder="Email Address" name="emailAddress" required>
+            </div>
+            <div class="input-box">
+                <input type="tel" placeholder="Mobile Number" name="mobileNumber">
+                <input type="text" placeholder="Email Subject" name="emailSubject" required>
+            </div>
+            <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+        <div id="form-response"></div> 
+    </section>
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 by SBIT-2H | All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#" class="logo"><span>QCU </span>PORTAL</a>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"> </script>
+    
+        <script src="js/script.js"></script>
+    </body>
+</html>

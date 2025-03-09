@@ -1,0 +1,318 @@
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        scroll-behavior: smooth;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    :root {
+        --bg-color: #f0f0f5;
+        --second-bg-color: #ffffff;
+        --text-color: #212529;
+        --main-color: #d9534f;
+    }
+    html{
+        font-size: 1rem;
+        overflow-x: hidden;
+    }
+
+    span {
+        color: var(--main-color);
+    }
+
+    body {
+        display: flex;
+        min-height: 100vh;
+    }
+    .header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: .5rem;
+        background-color: var(--bg-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+    }
+    .header a{
+        display: block;
+        text-decoration: none;
+        color: var(--text-color);
+        transition: .3s;
+    }
+    .header a:hover{
+        background-color: var(--bg-color);
+        color: var(--main-color);
+        border-radius: 1rem;
+    }
+    .logo {
+        font-size: 2.2rem;
+        color: var(--text-color);
+        font-weight: 100px;
+        cursor: default;
+    }
+
+    .logo img {
+        width: 23px;
+        height: 23px;
+    }
+
+
+    .dropdown {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .user-icon-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .user-icon {
+        cursor: pointer;
+        font-size: 1.5rem; /* Adjust as needed */
+        padding: 0.5rem;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        right: 0;
+        border-radius: 5px;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s;
+        border-radius: 5px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .sidebar {
+        box-sizing: border-box;
+        background-color: var(--bg-color);
+        height: 100vh;
+        width: 250px;
+        margin-top: 75px;
+        position: sticky;
+        align-self: start;
+    }
+
+    .sidebar a {
+        display: block;
+        padding: 10px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: var(--text-color);
+        transition: .3s;
+    }
+
+    .sidebar a:hover {
+        background-color: var(--bg-color);
+        color: var(--main-color);
+        border-radius: 1rem;
+    }
+
+    .sidebar a i {
+        margin-right: 1rem;
+    }
+
+    .content {
+        flex-grow: 1; 
+        padding: 20px;
+        margin-left: 6px; 
+        background-color: var(--bg-color);
+        margin-top: 75px;
+        position: sticky;
+    }
+
+    .content-section {
+        display: none;
+    }
+
+    .content-section.active {
+        display: block;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: var(--main-color);
+        color: white;
+    }
+
+    .gwa-computation {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .gwa-computation label {
+        margin-right: 1rem;
+    }
+
+    .gwa-computation input {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    #gwa-result {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .grade-selection {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 10px;
+    }
+
+    select {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    #grades button {
+        padding: 8px 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    #grades button:hover {
+        background-color: #45a049;
+    }
+
+    #grades button:active {
+        background-color: #3e8e41;
+    }
+
+    #grades table {
+        margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+        .sidebar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1000;
+        padding: 0.5rem 0;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+    
+        .sidebar a {
+        flex: 1;
+        text-align: center;
+        margin-bottom: 0;
+        padding: 0.5rem;
+        border-radius: 0;
+        }
+    
+        .sidebar a i {
+        display: block;
+        margin-right: 0;
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+        }
+    
+        .content {
+        margin-left: 0;
+        margin-top: 55px; /* Adjust top margin for header height */
+        padding-bottom: 70px; /* Adjust padding for sidebar height */
+        }
+    
+        html {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+        }
+    
+        .header {
+        padding: 0.3rem;
+        }
+    
+        .logo {
+        font-size: 1.8rem;
+        }
+    
+        .logo img {
+        width: 20px;
+        height: 20px;
+        }
+    
+        .header a {
+        padding: 0.3rem;
+        }
+    
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.85rem; /* Slightly smaller font for mobile */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 6px; /* Reduced padding for mobile */
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--main-color);
+            color: white;
+        }
+
+        /* Optional: Add some subtle styling for better readability */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Add some margin to the table for spacing */
+        table {
+            margin: 10px;
+        }
+    } 

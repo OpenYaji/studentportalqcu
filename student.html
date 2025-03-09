@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/student.css">
+</head>
+<body>    
+    <header class="header">
+    <a href="#" class="logo"><span> QCU </span>P<img src="images/profile1.png" alt="">RTAL</a>
+    <nav class="navbar">
+        <ul class="dropdown">
+          <li>
+            <div class="user-icon-container">
+              <i class="bx bx-user-circle user-icon" id="userDropdownToggle"></i>
+              <div class="dropdown-content" id="userDropdown">
+                <a href="#"><i class='bx bx-cog'></i> Settings</a>
+                <a href="/index.html" class="logout-link"><i class='bx bx-log-out'></i> Logout</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="sidebar">
+        <a href="#" data-section="grades"><i class='bx bx-book-open'></i>Grades</a>
+        <a href="#" data-section="schedule"><i class='bx bx-calendar' ></i>Class Schedule</a>
+        <a href="#" data-section="past-grades"><i class='bx bx-history' ></i>Past Grades</a>
+        <a href="#" data-section="curriculum"><i class='bx bx-list-ul' ></i>Curriculum</a>
+    </div>
+    <div class="home">
+
+    </div>
+    <div class="content">
+        <div id="grades" class="content-section active">
+            <h2>Current Grades (2nd Year, 2nd Semester)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="current-grades-table"></tbody>
+            </table>
+            <button onclick="calculateGWA()">Calculate GWA</button>
+            <div id="gwa-result"></div>
+        </div>
+        <div id="schedule" class="content-section">
+            <h2>Class Schedule</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Section-Subject</th>
+                        <th>Unit</th>
+                        <th>Room</th>
+                        <th>Days</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SE101</td>
+                        <td>SBIT2E-Software Engineering</td>
+                        <td>3</td>
+                        <td>IL603a</td>
+                        <td>F</td>
+                        <td>11:00AM-1:00PM</td>
+                    </tr>
+                    <tr>
+                        <td>PE4</td>
+                        <td>SBIT2E-Team Sports</td>
+                        <td>2</td>
+                        <td>SB OG</td>
+                        <td>F</td>
+                        <td>2:00PM-4:00PM</td>
+                    </tr>
+                    <tr>
+                        <td>SE101</td>
+                        <td>SBIT2E-Software Engineering</td>
+                        <td>0</td>
+                        <td>IL604a</td>
+                        <td>F</td>
+                        <td>7:00AM-10:00AM</td>
+                    </tr>
+                    <tr>
+                        <td>IPT101</td>
+                        <td>SBIT2E-Integrative Programming and Technologies 1</td>
+                        <td>0</td>
+                        <td>IL604a</td>
+                        <td>M</td>
+                        <td>11:00AM-2:00PM</td>
+                    </tr>
+                    <tr>
+                        <td>IPT101</td>
+                        <td>SBIT2E-Integrative Programming and Technologies 1</td>
+                        <td>3</td>
+                        <td>IL604a</td>
+                        <td>M</td>
+                        <td>8:00AM-10:00AM</td>
+                    </tr>
+                    <tr>
+                        <td>SOCSCI2</td>
+                        <td>SBIT2E-Readings in Philippine History</td>
+                        <td>3</td>
+                        <td>IL504a</td>
+                        <td>S</td>
+                        <td>11:00AM-2:00PM</td>
+                    </tr>
+                    <tr>
+                        <td>SOCSCI1</td>
+                        <td>SBIT2E-Understanding the Self</td>
+                        <td>3</td>
+                        <td>IL504a</td>
+                        <td>S</td>
+                        <td>7:00AM-10:00AM</td>
+                    </tr>
+                    <tr>
+                        <td>HCI101</td>
+                        <td>SBIT2E-Introduction to Human Computer Interaction</td>
+                        <td>0</td>
+                        <td>IK503 F1</td>
+                        <td>T</td>
+                        <td>10:00AM-1:00PM</td>
+                    </tr>
+                    <tr>
+                        <td>HCI101</td>
+                        <td>SBIT2E-Introduction to Human Computer Interaction</td>
+                        <td>3</td>
+                        <td>IL604a</td>
+                        <td>T</td>
+                        <td>7:00AM-9:00AM</td>
+                    </tr>
+                    <tr>
+                        <td>IM101</td>
+                        <td>SBITZE-Advanced Database Systems</td>
+                        <td>0</td>
+                        <td>IK503 F1</td>
+                        <td>W</td>
+                        <td>2:00PM-5:00PM</td>
+                    </tr>
+                    <tr>
+                        <td>IM101</td>
+                        <td>SBIT2E-Advanced Database Systems</td>
+                        <td>3</td>
+                        <td>IL602a</td>
+                        <td>W</td>
+                        <td>6:00PM-8:00PM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="past-grades" class="content-section">
+            <h2>Past Grades</h2>
+        
+            <div class="grade-selection">
+                <label for="grade-year">Select Year:</label>
+                <select id="grade-year" onchange="filterGrades()">
+                    <option value="1st">1st Year</option>
+                    <option value="2nd">2nd Year</option>
+                    <option value="3rd">3rd Year</option>
+                    <option value="4th">4th Year</option>
+                </select>
+        
+                <label for="grade-sem">Select Semester:</label>
+                <select id="grade-sem" onchange="filterGrades()">
+                    <option value="1st">1st Semester</option>
+                    <option value="2nd">2nd Semester</option>
+                </select>
+            </div>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="past-grades-table">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="curriculum" class="content-section">
+            <h2>Curriculum</h2>
+        
+            <div class="curriculum-filter">  <label for="curriculum-year">Select Year:</label>
+                <select id="curriculum-year" onchange="filterCurriculum()">
+                    <option value="1st">1st Year</option>
+                    <option value="2nd">2nd Year</option>
+                    <option value="3rd">3rd Year</option>
+                    <option value="4th">4th Year</option>
+                </select>
+        
+                <label for="curriculum-sem">Select Semester:</label>
+                <select id="curriculum-sem" onchange="filterCurriculum()">
+                    <option value="1st">1st Semester</option>
+                    <option value="2nd">2nd Semester</option>
+                </select>
+            </div>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject Title</th>
+                        <th>Units</th>
+                        <th>Pre-requisite/(Co-requisite)</th>
+                    </tr>
+                </thead>
+                <tbody id="curriculum-table">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/js/student.js"></script>
+
+</body>
+</html>
