@@ -128,7 +128,7 @@ function validateLogin() {
       }, 1500);
     }, 2000);
   } else {
-    console.log("Login failed");
+    console.log("Login failed!");
 
     document.getElementById("loading-screen").style.display = "none";
     alert("Invalid student ID or password.");
